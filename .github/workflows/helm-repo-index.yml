@@ -1,0 +1,31 @@
+name: helm-git-repo
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Helm Package Manager
+      run: |
+           curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+           sudo apt-get install apt-transport-https --yes
+           echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+           sudo apt-get update
+           sudo apt-get install helm
+           echo "Helm Installation completed"
+    - name: Generate helm index.yaml
+      run: |
+           helm repo index .
+    - name: Commit index.yaml
+      run: |
+           echo -e `git config --global user.name 'github-ci' && git config --global user.email 'github-ci@users.noreply.github.com' && git add index.yaml && git commit -am "Updated index.yaml" && git push`
+           echo "Package publish completed"
