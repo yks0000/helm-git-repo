@@ -3,7 +3,7 @@ entries:
   examplecharts:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-04-06T09:18:23.908400185Z"
+    created: "2021-04-06T09:23:25.575233427Z"
     description: A Learning Helm Chart by Yogesh Sharma.
     digest: 12342c67f509005f6c6fd23b61152891e3e53f915b4fdcca84c45ae917ff3a98
     name: examplecharts
@@ -13,7 +13,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-04-06T09:18:23.907698684Z"
+    created: "2021-04-06T09:23:25.574674618Z"
     description: A Learning Helm Chart by Yogesh Sharma.
     digest: 498d622d34298a9ab57117185a4c032645ef6d76614e9a01461849f6721e5b98
     name: examplecharts
@@ -23,7 +23,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-04-06T09:18:23.906735383Z"
+    created: "2021-04-06T09:23:25.574054608Z"
     description: A Learning Helm Chart by Yogesh Sharma.
     digest: 0886894a85ff9d6fcba0944b32d9140a2d05d41e4eb3d9cefb72d1899e91efde
     name: examplecharts
@@ -31,4 +31,4 @@ entries:
     urls:
     - examplecharts-0.1.1.tgz
     version: 0.1.1
-generated: "2021-04-06T09:18:23.905342082Z"
+generated: "2021-04-06T09:23:25.572797287Z"
