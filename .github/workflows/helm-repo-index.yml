@@ -22,11 +22,15 @@ jobs:
            sudo apt-get update
            sudo apt-get install helm
            python -V
-           echo "Helm Installation completed"
+           pip3.8 install -r requirements.txt
+           echo "Dependencies Installation completed"
     - name: Generate helm index.yaml
       run: |
            helm repo index .
+    - name: Generate helm.html
+      run: |
+           python3 generate-helm-json.py
     - name: Commit index.yaml
       run: |
-           echo -e `git config --global user.name 'github-ci' && git config --global user.email 'github-ci@users.noreply.github.com' && git add index.yaml && git commit -am "Updated index.yaml" && git push`
+           echo -e `git config --global user.name 'github-ci' && git config --global user.email 'github-ci@users.noreply.github.com' && git add index.yaml helm.html && git commit -am "Updated index.yaml" && git push`
            echo "Package publish completed"
